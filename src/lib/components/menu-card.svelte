@@ -1,13 +1,14 @@
 
-<script>
-  export let equipment
+<script lang="ts">
+  export let name: String = ""
+  export let description: String = ""
   export let onClicked = () => {}
 </script>
 
 <button on:click={onClicked}>
   <span class="flex-auto">
-    <h3>{equipment ? equipment.name : ""}</h3>
-    <p>{equipment ? equipment.description : ""}</p>
+    <h3>{name}</h3>
+    <p>{description}</p>
   </span>
 </button>
 

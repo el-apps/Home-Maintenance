@@ -1,34 +1,21 @@
 <script>
   import { goto } from "$app/navigation";
-  import EquipmentCard from "$lib/components/models/equipment-card.svelte";
+  import MenuCard from "$lib/components/menu-card.svelte";
+  import { Asset } from "$lib/components/types/asset";
+  import { database } from "$lib/database/database"
 
-  export let equipmentList = [
-    {
-      id: 0,
-      name: "Furnace",
-      description: "A hot furnace",
-    },
-    {
-      id: 1,
-      name: "Water Softener",
-      description: "A salty water softener",
-    },
-    {
-      id: 2,
-      name: "Odessey",
-      description: "A fast vehicle",
-    },
-  ];
+  export let assetList = database.getAssets()
 </script>
 
 <div class="page">
-  <h1>Equipment</h1>
+  <h1>Assets</h1>
   <dl>
-    {#each equipmentList as item}
-      <EquipmentCard
-        equipment={item}
-        onClicked={() => goto(`/equipment/${item.id}`)}
-      ></EquipmentCard>
+    {#each assetList as item}
+      <MenuCard
+        name={item.name}
+        description={item.description}
+        onClicked={() => goto(`/asset/${item.id}`)}
+      ></MenuCard>
     {/each}
   </dl>
 </div>

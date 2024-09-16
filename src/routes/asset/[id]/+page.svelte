@@ -2,4 +2,4 @@
   import { page } from '$app/stores'; 
 </script>
 
-<h1>Equipment View Page {$page.params.equipmentId}!!</h1>
+<h1>Asset View Page {$page.params.id}!!</h1>
