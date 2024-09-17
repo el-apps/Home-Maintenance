@@ -13,7 +13,8 @@
 <style>
   .title {
     font-size: medium;
-    padding-left: 8px;
+    padding-left: 4px;
+    color: rgba(var(--color-surface-200));
   }
 
   .input {

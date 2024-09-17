@@ -1,4 +1,5 @@
 import { Asset } from '$lib/types/asset'
+import { AssetDetails } from '$lib/types/asset-details'
 
 
 class Database {
@@ -14,18 +15,11 @@ class Database {
   }
 
   getAssets(): Asset[] {
-    return [
-      {
-        id: 1,
-        name: "test1",
-        description: "This is a test 1"
-      },
-      {
-        id: 2,
-        name: "test2",
-        description: "This is a test 2"
-      }
-    ]
+    let list = []
+    for (let i = 1; i < 3; ++i) {
+      list.push(this.getAsset(i))
+    }
+    return list
   }
 
   getAsset(id: any): Asset {
@@ -33,8 +27,17 @@ class Database {
       return new Asset()
     return {
       id: id,
-      name: `test${id}`,
-      description: `This is a test ${id}`
+      name: `Vehicle ${id}`,
+      description: `This is a fast vehicle ${id}`
+    }
+  }
+
+  getAssetDetails(id: any): AssetDetails {
+    if (isNaN(Number(id)))
+      return new AssetDetails()
+    return {
+      manufacturer: "Fast Company",
+      model: "Speedster"
     }
   }
 }

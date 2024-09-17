@@ -7,26 +7,33 @@
 </script>
 
 <div class="base">
-  <div class="row">
-    <div class="assetImage">
-      <Image></Image>
-    </div>
-    <div class="column">
-      <SettingInput
-        title="Name"
-        placeholder="Set name..."
-        bind:value={asset.name}
-      ></SettingInput>
+  <div class="column">
+    <h1 class="title">Asset</h1>
+    <div class="row">
+      <div class="assetImage">
+        <Image></Image>
+      </div>
+      <div class="column">
+        <SettingInput
+          title="Name"
+          placeholder="Set name..."
+          bind:value={asset.name}
+        ></SettingInput>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
+  .title {
+    display: flex;
+    font-size: larger;
+    justify-content: center;
+  }
   .base {
     background-color: rgba(var(--color-surface-800));
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 16px;
     border-radius: 8px;
     width: fit-content;
@@ -42,6 +49,6 @@
   .assetImage {
     height: 100px;
     width: 100px;
-    margin-right: 16px;
+    margin-right: 8px;
   }
 </style>
