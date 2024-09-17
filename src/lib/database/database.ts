@@ -1,4 +1,4 @@
-import { Asset } from '$lib/components/types/asset'
+import { Asset } from '$lib/types/asset'
 
 
 class Database {
@@ -26,6 +26,16 @@ class Database {
         description: "This is a test 2"
       }
     ]
+  }
+
+  getAsset(id: any): Asset {
+    if (isNaN(Number(id)))
+      return new Asset()
+    return {
+      id: id,
+      name: `test${id}`,
+      description: `This is a test ${id}`
+    }
   }
 }
 

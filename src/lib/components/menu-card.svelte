@@ -1,11 +1,11 @@
 
 <script lang="ts">
-  export let name: String = ""
-  export let description: String = ""
+  export let name: string = ""
+  export let description: string = ""
   export let onClicked = () => {}
 </script>
 
-<button on:click={onClicked}>
+<button on:click|preventDefault={onClicked}>
   <span class="flex-auto">
     <h3>{name}</h3>
     <p>{description}</p>

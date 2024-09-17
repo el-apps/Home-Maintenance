@@ -1,7 +1,7 @@
 <script>
   import { goto } from "$app/navigation";
   import MenuCard from "$lib/components/menu-card.svelte";
-  import { Asset } from "$lib/components/types/asset";
+  import { Asset } from "$lib/types/asset";
   import { database } from "$lib/database/database"
 
   export let assetList = database.getAssets()
