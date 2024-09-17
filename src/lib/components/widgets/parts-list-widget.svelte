@@ -1,15 +1,18 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
   import SettingInput from "$lib/components/models/setting-input.svelte";
-  import { AssetDetails } from "$lib/types/asset-details";
+  import { AssetPart } from "$lib/types/asset-part";
+  import MenuCard from "$lib/components/models/menu-card.svelte";
 
-  export let details: AssetDetails;
+  export let parts: AssetPart[];
 </script>
 
 <div class="base">
   <div class="column">
-    <h1 class="title">Details</h1>
-    <SettingInput title="Manufacturer" placeholder="Set manufacturer..." bind:value={details.manufacturer}></SettingInput>
-    <SettingInput title="Model" placeholder="Set model..." bind:value={details.model}></SettingInput>
+    <h1 class="title">Parts</h1>
+    {#each parts as part}
+      <MenuCard name="{part.name}" description="{part.description}" onClicked="{() => {goto(`/part/${part.id}`)}}"></MenuCard>
+    {/each}
   </div>
 </div>
 

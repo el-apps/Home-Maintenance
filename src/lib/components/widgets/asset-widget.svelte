@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Image from "$lib/components/image.svelte";
-  import SettingInput from "$lib/components/setting-input.svelte";
+  import Image from "$lib/components/models/image.svelte";
+  import SettingInput from "$lib/components/models/setting-input.svelte";
   import { Asset } from "$lib/types/asset";
 
   export let asset: Asset;

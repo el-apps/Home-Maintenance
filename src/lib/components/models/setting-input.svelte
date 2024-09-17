@@ -14,7 +14,6 @@
   .title {
     font-size: medium;
     padding-left: 4px;
-    color: rgba(var(--color-surface-200));
   }
 
   .input {
@@ -22,5 +21,6 @@
     padding: 0 8px 0 8px;
     border-radius: 4px;
     font-size: medium;
+    color: rgba(var(--color-surface-200));
   }
 </style>

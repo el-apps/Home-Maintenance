@@ -13,14 +13,14 @@
 
 <style>
   .placeholderText {
-    color: rgba(var(--color-surface-600));
+    color: rgba(var(--color-surface-500));
   }
   .placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    border: 1px solid rgba(var(--color-surface-600));
+    border: 1px solid rgba(var(--color-surface-500));
     border-radius: 4px;
     height: 100%;
     width: 100%;

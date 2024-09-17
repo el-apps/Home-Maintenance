@@ -1,6 +1,6 @@
 <script>
   import { goto } from "$app/navigation";
-  import MenuCard from "$lib/components/menu-card.svelte";
+  import MenuCard from "$lib/components/models/menu-card.svelte";
   import { database } from "$lib/database/database"
 
   export let assetList = database.getAssets()

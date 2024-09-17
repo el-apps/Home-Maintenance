@@ -20,12 +20,13 @@
     font-size: large;
   }
   span > p {
-    font-size: small;
+    font-size: medium;
+    color: rgba(var(--color-surface-200));
   }
   button {
     background-color: rgba(var(--color-surface-700));
     border-radius: 8px;
-    padding: 4px;
+    padding: 8px;
     margin: 4px;
   }
 </style>
