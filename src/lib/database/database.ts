@@ -1,6 +1,7 @@
 import { Asset } from "$lib/types/asset";
 import { AssetDetails } from "$lib/types/asset-details";
-import { AssetPart } from "$lib/types/asset-part";
+import { Part } from "$lib/types/part";
+import type { Task } from "$lib/types/task";
 
 class Database {
   private static _instance: Database;
@@ -40,10 +41,9 @@ class Database {
     };
   }
 
-  getParts(assetId: any): AssetPart[] {
-    
+  getParts(assetId: any): Part[] {  
     let list = [];
-    for (let i = 1; i < 3; ++i) {
+    for (let i = 1; i < 20; ++i) {
       list.push({
         id: i,
         name: `Part ${i}`,
@@ -53,11 +53,14 @@ class Database {
     return list;
   }
 
-  getPart(assetId: any): AssetPart[] {
-    
+  getTasks(assetId: any): Task[] {  
     let list = [];
-    for (let i = 1; i < 3; ++i) {
-      list.push(this.getAsset(i));
+    for (let i = 1; i < 20; ++i) {
+      list.push({
+        id: i,
+        name: `Task ${i}`,
+        description: `Task ${i} is an asset to this asset`
+      });
     }
     return list;
   }

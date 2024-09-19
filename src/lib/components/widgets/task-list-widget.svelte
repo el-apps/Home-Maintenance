@@ -1,21 +1,21 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import { Part } from "$lib/types/part";
+  import { Task } from "$lib/types/task";
   import MenuCard from "$lib/components/models/menu-card.svelte";
   import Widget from "$lib/components/widgets/widget.svelte";
 
-  export let parts: Part[];
-  let searchText: string = "";
+  export let tasks: Task[];
+  let searchText: string = ""
 </script>
 
-<Widget title="Parts" hasSearch="{true}" bind:search="{searchText}">
+<Widget title="Tasks" hasSearch="{true}" bind:search="{searchText}">
   <div class="column">
-    {#each parts.filter(x => x.name.includes(searchText)) as part}
+    {#each tasks.filter(x => x.name.includes(searchText)) as task}
       <MenuCard
-        name={part.name}
-        description={part.description}
+        name={task.name}
+        description={task.description}
         onClicked={() => {
-          goto(`/part/${part.id}`);
+          goto(`/task/${task.id}`);
         }}
       ></MenuCard>
     {/each}

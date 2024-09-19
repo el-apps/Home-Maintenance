@@ -4,7 +4,7 @@
 </script>
 
 {#if source !== ""}
-  <img src={source} alt={altText} />
+  <img src={source} alt={altText}/>
 {:else}
   <div class="placeholder">
     <p class="placeholderText">Image</p>

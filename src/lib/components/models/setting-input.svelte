@@ -5,17 +5,19 @@
   export let enabled: boolean = true
 </script>
 
-<div>
+<div class="base">
   <h1 class="title">{title}</h1>
   <input class="input" placeholder="{placeholder}" bind:value disabled="{!enabled}"/>
 </div>
 
 <style>
+  .base {
+    width: 100%;
+  }
   .title {
     font-size: medium;
     padding-left: 4px;
   }
-
   .input {
     background-color: transparent;
     padding: 0 8px 0 8px;

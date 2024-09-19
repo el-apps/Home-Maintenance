@@ -1,54 +1,25 @@
 <script lang="ts">
-  import Image from "$lib/components/models/image.svelte";
   import SettingInput from "$lib/components/models/setting-input.svelte";
+  import { AssetDetails } from "$lib/types/asset-details";
   import { Asset } from "$lib/types/asset";
+  import Widget from "$lib/components/widgets/widget.svelte";
+  import MenuCard from "../models/menu-card.svelte";
 
   export let asset: Asset;
+  export let details: AssetDetails;
 </script>
 
-<div class="base">
+<Widget title="Asset">
   <div class="column">
-    <h1 class="title">Asset</h1>
-    <div class="row">
-      <div class="assetImage">
-        <Image></Image>
-      </div>
-      <div class="column">
-        <SettingInput
-          title="Name"
-          placeholder="Set name..."
-          bind:value={asset.name}
-        ></SettingInput>
-      </div>
-    </div>
+    <SettingInput title="Name" placeholder="Set name..." bind:value={asset.name}></SettingInput>
+    <SettingInput title="Manufacturer" placeholder="Set manufacturer..." bind:value={details.manufacturer}></SettingInput>
+    <SettingInput title="Model" placeholder="Set model..." bind:value={details.model}></SettingInput>
   </div>
-</div>
+</Widget>
 
 <style>
-  .title {
-    display: flex;
-    font-size: larger;
-    justify-content: center;
-  }
-  .base {
-    background-color: rgba(var(--color-surface-800));
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    border-radius: 8px;
-    width: fit-content;
-  }
-  .row {
-    display: flex;
-    flex-direction: row;
-  }
   .column {
     display: flex;
-    flex-direction: column;
-  }
-  .assetImage {
-    height: 100px;
-    width: 100px;
-    margin-right: 8px;
+    flex-flow: column wrap;
   }
 </style>

@@ -6,7 +6,7 @@
 </script>
 
 <button on:click|preventDefault={onClicked}>
-  <span class="flex-auto">
+  <span>
     <h3>{name}</h3>
     <p>{description}</p>
   </span>
@@ -27,6 +27,6 @@
     background-color: rgba(var(--color-surface-700));
     border-radius: 8px;
     padding: 8px;
-    margin: 4px;
+    margin-top: 8px;
   }
 </style>
